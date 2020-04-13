@@ -27838,6 +27838,7 @@ function zoom() {
 
 var d3 = /*#__PURE__*/Object.freeze({
     version: version$2,
+    path: path,
     bisect: bisectRight,
     bisectRight: bisectRight,
     bisectLeft: bisectLeft,
@@ -27869,10 +27870,6 @@ var d3 = /*#__PURE__*/Object.freeze({
     transpose: transpose,
     variance: variance,
     zip: zip,
-    axisTop: axisTop,
-    axisRight: axisRight,
-    axisBottom: axisBottom,
-    axisLeft: axisLeft,
     brush: brush,
     brushX: brushX,
     brushY: brushY,
@@ -28042,7 +28039,10 @@ var d3 = /*#__PURE__*/Object.freeze({
     interpolateCubehelix: cubehelix$2,
     interpolateCubehelixLong: cubehelixLong,
     quantize: quantize,
-    path: path,
+    axisTop: axisTop,
+    axisRight: axisRight,
+    axisBottom: axisBottom,
+    axisLeft: axisLeft,
     polygonArea: area$1,
     polygonCentroid: centroid$1,
     polygonHull: hull,
@@ -34223,7 +34223,7 @@ var DagreGraph = /** @class */ (function (_super) {
             if (fitBoundaries) {
                 //@BertCh recommendation for fitting boundaries
                 var bounds = inner.node().getBBox();
-                var parent_1 = inner.node().parentElement;
+                var parent_1 = inner.node().parentElement || inner.node().parentNode;
                 var fullWidth = parent_1.clientWidth || parent_1.parentNode.clientWidth;
                 var fullHeight = parent_1.clientHeight || parent_1.parentNode.clientHeight;
                 var width = bounds.width;
